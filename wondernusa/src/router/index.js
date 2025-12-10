@@ -3,6 +3,13 @@ import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    // Scroll ke atas setiap pindah halaman
+    if (to.hash) {
+      return { el: to.hash, behavior: 'smooth' }
+    }
+    return { top: 0, behavior: 'smooth' }
+  },
   routes: [
     {
       path: '/',
@@ -28,6 +35,11 @@ const router = createRouter({
       path: '/contact',
       name: 'contact',
       component: () => import('../views/ContactView.vue')
+    },
+    // Redirect semua path tidak dikenal ke home
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/'
     }
   ],
 })
