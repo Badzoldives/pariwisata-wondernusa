@@ -1,0 +1,4 @@
+/* Import Google Fonts - harus di paling atas */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Oswald:wght@400;600&family=Cinzel:wght@700&family=Raleway:wght@300;600;700&family=Cormorant+Garamond:wght@400&display=swap');
+
+@import "tailwindcss";

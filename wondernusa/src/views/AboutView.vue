@@ -1,0 +1,76 @@
+<script setup>
+import { ref } from 'vue'
+
+const imageAbout = '/src/assets/hero-makassar.jpg'
+const testimonials = ref([
+  {
+    title: 'Pengalaman Tak Terlupakan',
+    text: "Kami bekerja sama dengan pemandu lokal untuk memberikan pengalaman budaya yang mendalam.",
+    author: "Tim Wondernusa"
+  },
+  {
+    title: 'Destinasi Terkurasi',
+    text: "Kami mengkurasi destinasi terbaik untuk memastikan pengalaman liburan yang tak terlupakan.",
+    author: "Tim Wondernusa"
+  },
+  {
+    title: 'Layanan Pelanggan 24/7',
+    text: "Kami menyediakan layanan pelanggan yang siap membantu Anda kapan saja, memastikan pengalaman perjalanan yang lancar dan menyenangkan.",
+    author: "Tim Wondernusa"
+  }
+])
+</script>
+
+<template>
+  <div class="min-h-screen text-slate-900 bg-linear-to-b from-[#cfe8ff] to-[#b7dfff] pt-[50px] font-sans"
+       style="background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(180deg, rgba(255,255,255,0.02), transparent); background-size: 20px 20px, cover;">
+
+    <!-- ABOUT COPY BELOW -->
+    <section class="bg-gradient-to-b from-sky-200 to-white mx-auto px-5 py-32 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-4xl mb-2.5 font-bold text-[#06263a]">About Wondernusa</h2>
+        <p class="text-[rgba(6,38,58,0.8)] leading-[1.8]">
+          Wondernusa adalah platform perjalanan yang membantu Anda mengeksplorasi keindahan Indonesia
+          dengan cara yang lebih mudah dan menyenangkan. Kami mengkurasi destinasi, pengalaman, dan
+          inspirasi perjalanan dari Sabang sampai Merauke.
+        </p>
+      </div>
+    </section>
+
+    <!-- MAIN ABOUT LAYOUT -->
+    <main class="pb-8">
+      <div class="max-w-5xl mx-auto px-5 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <!-- Left: Testimonials -->
+        <div class="py-8 lg:py-10 flex justify-center">
+          <div class="flex flex-col items-center gap-6 max-w-[640px]">
+            <article
+              v-for="(t, i) in testimonials"
+              :key="i"
+              class="bg-linear-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.02)] rounded-lg p-[1.4rem_1.6rem] shadow-[0_6px_18px_rgba(2,6,23,0.06)]"
+              style="backdrop-filter: blur(2px);">
+              <h3 class="text-[1.05rem] tracking-[0.18em] uppercase text-[rgba(6,38,58,0.95)] mb-2.5">
+                {{ t.title }}
+              </h3>
+              <p class="text-[rgba(6,38,58,0.85)] leading-[1.7] text-[0.95rem] mb-3.5">
+                {{ t.text }}
+              </p>
+              <div class="text-[rgba(6,38,58,0.7)] italic text-[0.88rem]">
+                / {{ t.author }}
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Right: foto -->
+        <div class="flex items-center justify-center order-2 lg:order-none mt-4 lg:mt-0">
+          <div class="w-full h-[260px] md:h-[360px] lg:h-[420px] rounded-xl overflow-hidden shadow-[0_18px_40px_rgba(2,6,23,0.18)] relative bg-linear-to-br from-[#ffffff33] to-[#e6f5ff33] group">
+            <img
+              :src="imageAbout"
+              alt="About image"
+              class="w-full h-full object-cover block origin-center transition-transform duration-600 ease-in-out group-hover:scale-105" />
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</template>
