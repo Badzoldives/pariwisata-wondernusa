@@ -36,3 +36,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+list file terlibat
+-import { ref } from 'vue'
+-

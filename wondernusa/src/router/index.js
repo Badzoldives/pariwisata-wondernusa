@@ -36,7 +36,11 @@ const router = createRouter({
       name: 'contact',
       component: () => import('../views/ContactView.vue')
     },
-    // Redirect semua path tidak dikenal ke home
+    {
+      path: '/about me',
+      name: 'about me',
+      component: () => import('../views/AboutmeView.vue')
+    },
     {
       path: '/:pathMatch(.*)*',
       redirect: '/'

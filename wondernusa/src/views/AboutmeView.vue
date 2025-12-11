@@ -31,11 +31,6 @@ const testimonials = ref([
         <h2 class="text-4xl mb-2.5 font-bold text-[#06263a]">Eka Purnamasari Arfat</h2>
         <p class="text-[rgba(6,38,58,0.8)] leading-[1.8]">
           Eka Purnamasari Arfat-11231022-Informatika
-          Hubungi kami untuk pertanyaan, saran, atau informasi lebih lanjut tentang layanan kami.
-          Tim Wondernusa siap membantu Anda merencanakan perjalanan impian ke seluruh Indonesia.
-          Hubungi kami untuk pertanyaan, saran, atau informasi lebih lanjut tentang layanan kami.
-          Tim Wondernusa siap membantu Anda merencanakan perjalanan impian ke seluruh Indonesia.
-
         </p>
       </div>
     </section>
@@ -64,6 +59,46 @@ const testimonials = ref([
           </div>
         </div>
 
+<section id="beach" class="py-16 bg-linear-to-br from-amber-400 via-amber-300 to-sky-200/80 scroll-mt-20">
+      <div class="max-w-[1120px] mx-auto px-6">
+        <div class="text-center mb-12">
+          <span class="inline-block text-xs uppercase tracking-[0.9em] text-white/100 font-semibold mb-4">
+            SUN & BEACH
+          </span>
+          <h2 class="text-4xl font-bold text-slate-900 mb-3 tracking-tight">
+            Rasakan Kehangatan Pantai Tropis
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed max-w-[700px] mx-auto">
+            Nikmati pesona pantai-pantai eksotis dengan pasir putih dan air laut jernih
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+          <article
+            v-for="(beach, i) in beachDestinations"
+            :key="i"
+            class="bg-white rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_10px_28px_rgba(0,0,0,0.12)]"
+          >
+            <div class="relative w-full h-[200px] overflow-hidden">
+              <img
+                :src="beach.image"
+                :alt="beach.name"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-linear-to-b from-black/10 to-black/35"></div>
+              <div class="absolute bottom-3 left-3 z-2 text-white text-xs font-medium bg-black/45 px-3 py-1.5 rounded-full backdrop-blur-sm">
+                <span>📍 {{ beach.location }}</span>
+              </div>
+            </div>
+            <div class="px-5 pt-4 pb-5">
+              <h3 class="text-lg font-bold text-slate-900 mb-1.5">{{ beach.name }}</h3>
+              <p class="text-slate-600 leading-relaxed mb-3.5 text-sm">{{ beach.description }}</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
         <!-- Right: foto -->
         <div class="flex items-center justify-center order-2 lg:order-none mt-4 lg:mt-0">
           <div class="w-full h-[260px] md:h-[360px] lg:h-[420px] rounded-xl overflow-hidden shadow-[0_18px_40px_rgba(2,6,23,0.18)] relative bg-linear-to-br from-[#ffffff33] to-[#e6f5ff33] group">
@@ -76,6 +111,4 @@ const testimonials = ref([
       </div>
     </main>
   </div>
-
-
 </template>

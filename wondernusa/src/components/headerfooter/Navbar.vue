@@ -54,6 +54,12 @@ const closeMobileMenu = () => {
           to="/about"
           class="text-slate-600 no-underline transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-sky-500 after:transition-[width] after:duration-300 hover:text-sky-500 hover:after:w-full [&.router-link-active]:text-sky-500 [&.router-link-active]:after:w-full"
         >
+          Aboue Me
+        </router-link>
+        <router-link
+          to="/about"
+          class="text-slate-600 no-underline transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-sky-500 after:transition-[width] after:duration-300 hover:text-sky-500 hover:after:w-full [&.router-link-active]:text-sky-500 [&.router-link-active]:after:w-full"
+        >
           About Us
         </router-link>
         <router-link
@@ -62,6 +68,7 @@ const closeMobileMenu = () => {
         >
           Contact
         </router-link>
+
       </nav>
 
       <!-- Mobile Hamburger Button -->
